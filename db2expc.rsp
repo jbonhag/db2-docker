@@ -1,0 +1,49 @@
+*-----------------------------------------------------
+* Generated response file used by the DB2 Setup wizard
+* generation time: 8/6/14 5:12 PM
+*-----------------------------------------------------
+*  Product Installation 
+LIC_AGREEMENT       = ACCEPT
+PROD       = EXPRESS_C
+FILE       = /opt/ibm/db2/V10.5
+INSTALL_TYPE       = TYPICAL
+*-----------------------------------------------
+*  Das properties 
+*-----------------------------------------------
+DAS_CONTACT_LIST       = LOCAL
+*  DAS user
+DAS_USERNAME       = dasusr1
+DAS_GROUP_NAME       = dasadm1
+DAS_HOME_DIRECTORY       = /home/dasusr1
+DAS_PASSWORD       = dasusr1
+* ----------------------------------------------
+*  Instance properties           
+* ----------------------------------------------
+INSTANCE       = inst1
+inst1.TYPE       = wse
+*  Instance-owning user
+inst1.NAME       = db2inst1
+inst1.GROUP_NAME       = db2iadm1
+inst1.HOME_DIRECTORY       = /home/db2inst1
+inst1.PASSWORD       = db2inst1
+ENCRYPTED       = inst1.PASSWORD
+inst1.AUTOSTART       = YES
+inst1.SVCENAME       = db2c_db2inst1
+inst1.PORT_NUMBER       = 50000
+inst1.CONFIGURE_TEXT_SEARCH       = NO
+*  Fenced user
+inst1.FENCED_USERNAME       = db2fenc1
+inst1.FENCED_GROUP_NAME       = db2fadm1
+inst1.FENCED_HOME_DIRECTORY       = /home/db2fenc1
+inst1.FENCED_PASSWORD       = db2fenc1
+* Contact  properties 
+CONTACT       = contact1
+contact1.CONTACT_NAME       = db2inst1
+contact1.EMAIL       = db2inst1@localhost
+contact1.PAGER       = false
+contact1.NEW_CONTACT       = YES
+contact1.INSTANCE       = inst1
+*-----------------------------------------------
+*  Installed Languages 
+*-----------------------------------------------
+LANG       = EN
