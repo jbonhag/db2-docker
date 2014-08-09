@@ -14,3 +14,4 @@ RUN v10.5fp1_linuxx64_expc.tar.gz/expc/db2setup -f sysreq -r db2expc.rsp; cat /t
 # until we can increase shared memory at build time
 ADD finish finish
 EXPOSE 50000
+CMD ["./finish"]
