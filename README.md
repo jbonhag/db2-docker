@@ -6,5 +6,5 @@ privileged mode, that is:
 
     docker run --privileged=true -t -i db2
 
-This will finish the installation, start the DB2 instance and create a
-sample database.
+This will increase the max shared memory size, start the DB2 instance
+and create a sample database.
