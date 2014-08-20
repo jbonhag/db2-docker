@@ -1,3 +1,0 @@
-#!/bin/sh
-sysctl -w kernel.shmmax=18446744073709551615
-su -c "db2start && db2 create database SAMPLE" - db2inst1

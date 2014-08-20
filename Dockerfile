@@ -3,7 +3,7 @@ MAINTAINER jeff
 
 # pre-requisites
 RUN apt-get update
-RUN apt-get install libaio1 libnuma1
+RUN apt-get -y install libaio1 libnuma1 binutils
 
 ADD v10.5fp1_linuxx64_expc.tar.gz v10.5fp1_linuxx64_expc.tar.gz
 ADD db2expc.rsp db2expc.rsp
@@ -12,6 +12,6 @@ ADD db2expc.rsp db2expc.rsp
 RUN v10.5fp1_linuxx64_expc.tar.gz/expc/db2setup -f sysreq -r db2expc.rsp; cat /tmp/db2setup.log
 
 # until we can increase shared memory at build time
-ADD finish finish
+ADD create_database.sh create_database.sh
 EXPOSE 50000
-CMD ["./finish"]
+# CMD ["./create_database.sh"]
