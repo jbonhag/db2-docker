@@ -26,7 +26,6 @@ inst1.NAME       = db2inst1
 inst1.GROUP_NAME       = db2iadm1
 inst1.HOME_DIRECTORY       = /home/db2inst1
 inst1.PASSWORD       = db2inst1
-ENCRYPTED       = inst1.PASSWORD
 inst1.AUTOSTART       = YES
 inst1.SVCENAME       = db2c_db2inst1
 inst1.PORT_NUMBER       = 50000
