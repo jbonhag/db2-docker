@@ -9,4 +9,8 @@ RUN useradd -m db2inst1
 RUN echo "db2inst1:db2inst1" | chpasswd
 RUN /opt/ibm/db2/V10.5/instance/db2icrt -u db2inst1 -p 50000 db2inst1
 
-CMD ["/bin/bash"]
+ADD run.sh /run.sh
+RUN chmod +x /run.sh
+
+EXPOSE 50000
+CMD ["/run.sh"]
