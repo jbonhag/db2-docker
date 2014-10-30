@@ -1,4 +1,5 @@
 FROM ubuntu:trusty
+MAINTAINER jeffbonhag
 
 ADD v10.5_linuxx64_expc.tar.gz /cache
 RUN dpkg --add-architecture i386
