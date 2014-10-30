@@ -16,4 +16,4 @@ ADD prepare.sh /prepare.sh
 RUN chmod +x /prepare.sh
 
 EXPOSE 50000
-CMD ["/prepare.sh"]
+CMD ["/bin/bash"]

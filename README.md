@@ -34,11 +34,11 @@ build
 run
 ===
 
-    docker run -P -u db2inst1 --privileged=true -it db2
+    docker run -P --privileged=true -it db2
 
 (inside docker)
 
-    ./run.sh
+    ./prepare.sh
 
 This will start the DB2 instance and create a sample database.  Then, you can
 see what port DB2 is running on with `docker ps`.
