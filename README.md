@@ -34,7 +34,7 @@ build
 run
 ===
 
-    docker run -P -u db2inst1 --privileged=true -it db2 /bin/bash
+    docker run -P -u db2inst1 --privileged=true -it db2
 
 (inside docker)
 
