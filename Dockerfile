@@ -1,16 +1,21 @@
-FROM debian:7.4
-MAINTAINER jeff
+FROM ubuntu:trusty
+MAINTAINER jeffbonhag <jeff@thebonhags.com>
 
-# pre-requisites
-RUN apt-get update
-RUN apt-get -y install libaio1 libnuma1 binutils
+ADD v10.5_linuxx64_expc.tar.gz /cache
+RUN dpkg --add-architecture i386
+RUN apt-get update -y
+RUN apt-get install libstdc++6:i386 libpam0g:i386 binutils libaio1 -y
+RUN /cache/expc/db2_install -b /opt/ibm/db2/V10.5
+RUN rm -fr /cache
 
-ADD v10.5fp1_linuxx64_expc.tar.gz v10.5fp1_linuxx64_expc.tar.gz
-ADD db2expc.rsp db2expc.rsp
+RUN useradd -m db2inst1
+RUN echo "db2inst1:db2inst1" | chpasswd
+RUN /opt/ibm/db2/V10.5/instance/db2icrt -u db2inst1 -p 50000 db2inst1
 
-RUN v10.5fp1_linuxx64_expc.tar.gz/expc/db2setup -r db2expc.rsp
+# prepare for commit
+ADD prepare.sh /prepare.sh
+RUN chmod +x /prepare.sh
 
-# until we can increase shared memory at build time
-ADD create_database.sh create_database.sh
 EXPOSE 50000
 CMD ["/bin/bash"]
+
