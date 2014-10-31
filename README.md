@@ -29,19 +29,33 @@ Also, hit up `boot2docker ip` for the ip address -- you'll need that later.
 build
 =====
 
-    docker build -t db2 .
-
-run
-===
-
-    docker run -P --privileged=true -it db2
+    docker build -t db2-express-c .
+    docker run -P --privileged=true -it db2-express-c
 
 (inside docker)
 
     ./prepare.sh
 
-This will start the DB2 instance and create a sample database.  Then, you can
-see what port DB2 is running on with `docker ps`.
+This will start the DB2 instance and create a sample database.
+
+(back in the shell)
+
+    docker ps | grep db2-express-c:0.0.1
+
+(note hash, e.g. e001bc1de596)
+
+    docker stop e001bc1de596
+    docker commit e001bc1de596 db2-express-c:0.0.2
+
+Thanks to rieske for the build script.
+
+run
+===
+
+it's kind of a doozy:
+
+    docker run --privileged=true -P -t -d -u db2inst1 jeffbonhag/db2-express-c:0.0.1 /bin/bash -c "source ~/sqllib/db2profile && db2start && read -p Waiting..."
+
 
 login!
 ======

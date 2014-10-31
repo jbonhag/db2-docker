@@ -1,5 +1,5 @@
 FROM ubuntu:trusty
-MAINTAINER jeffbonhag
+MAINTAINER jeffbonhag <jeff@thebonhags.com>
 
 ADD v10.5_linuxx64_expc.tar.gz /cache
 RUN dpkg --add-architecture i386
@@ -18,3 +18,4 @@ RUN chmod +x /prepare.sh
 
 EXPOSE 50000
 CMD ["/bin/bash"]
+
