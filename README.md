@@ -1,3 +1,5 @@
+Attention: IBM now provides a [Docker image for DB2](https://hub.docker.com/r/ibmcom/db2) on Docker Hub.  You're probably better off using that one.
+
 pre-requisites
 ==============
 
